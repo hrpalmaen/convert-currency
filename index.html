@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Conversor de moneda</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="./main.js"></script>
+</head>
+<body onload="loadDocument()">
+    <main>
+        <div class="container">
+            <form class="" id="form">
+                <div>
+                    <label for="">Convertir</label>
+                    <input type="number" id="value-input" min="0" autofocus />
+                    <select name="popo" id="fromChange">
+                        <option value="CO" selected>Pesos</option>
+                        <option value="US">Dolares</option>
+                        <!-- <option value="Eu">Euros</option> -->
+                    </select>
+                </div>
+                <div>
+                    <label for="">Convertir a:</label>
+                    <select name="popo2" id="toChange">
+                        <option value="CO">Pesos</option>
+                        <option value="US" selected>Dolares</option>
+                        <!-- <option value="Eu">Euros</option> -->
+                    </select>
+                </div>
+                <div>
+                    <input type="submit" value="convertir" />
+                </div>
+                <p class="container-result"></p>
+            </form>
+        </div>
+    </main>    
+</body>
+</html>
