@@ -1,11 +1,10 @@
 // 1 UE --
 const changeCOUS = 3623
 const changeUSCO = 0.00028
-// const changeUEEU = 2
-// const EU = 'EU'
+
 const CO = 'CO'
 const US = 'US'
-// const changeCO
+
 const loadDocument = () => {
     const $form = document.getElementById('form')
     const $input = document.querySelector('#value-input')
@@ -16,11 +15,8 @@ const loadDocument = () => {
     $input.addEventListener('input', getDataConvert)
     $fromChange.addEventListener('change', getDataConvert)
     $toChange.addEventListener('change', getDataConvert)
-    window.addEventListener('offline', () => {
-        const $containerResult = document.querySelectorAll('.container-result')[0]
-        $containerResult.style.color = 'green'
-        setText($containerResult, "Sin conexión")
-    })
+    window.addEventListener('offline', () => handleAlerts('block', "Sin conexión"))
+    window.addEventListener('online', () => handleAlerts('none', ''))
 }
 
 const getDataConvert = () => {
@@ -55,11 +51,11 @@ const handleSubmit = (event) => {
 const convert = (value, from, to) => {
     switch (from) {
         case CO:
-            if (to === CO) return value
-            return `$ ${value * changeUSCO}`
+            if (to === CO) return `$ ${value}`
+            return `US ${value * changeUSCO}`
         case US:
-            if (to === US) return value
-            return `US ${value * changeCOUS}`
+            if (to === US) return `US ${value}`
+            return `$ ${value * changeCOUS}`
         default:
             return 0
     }
@@ -68,4 +64,10 @@ const convert = (value, from, to) => {
 
 const setText = ($element, text) => {
     $element.innerHTML = text
+}
+
+const handleAlerts = (display, message) => {
+    console.log('message: ', message);
+    document.querySelector('.container-alert').style.display = display
+    document.querySelector('.alert').innerHTML = message
 }

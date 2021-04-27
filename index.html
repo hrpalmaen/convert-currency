@@ -15,7 +15,7 @@
                 <div>
                     <label for="">Convertir</label>
                     <input type="number" id="value-input" min="0" autofocus />
-                    <select name="popo" id="fromChange">
+                    <select id="fromChange">
                         <option value="CO" selected>Pesos</option>
                         <option value="US">Dolares</option>
                         <!-- <option value="Eu">Euros</option> -->
@@ -29,11 +29,16 @@
                         <!-- <option value="Eu">Euros</option> -->
                     </select>
                 </div>
-                <div>
-                    <input type="submit" value="convertir" />
+                <div class="btn">
+                    <input type="submit" value="Convertir" class="btn-submit"/>
                 </div>
                 <p class="container-result"></p>
             </form>
+        </div>
+        <div class="container-alert">
+            <div class="alert">
+                <span class="alert-text"></span>
+            </div>
         </div>
     </main>    
 </body>
