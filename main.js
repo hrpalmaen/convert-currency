@@ -49,16 +49,19 @@ const handleSubmit = (event) => {
  * @returns 
  */
 const convert = (value, from, to) => {
-    switch (from) {
-        case CO:
-            if (to === CO) return `$ ${value}`
-            return `US ${value * changeUSCO}`
-        case US:
-            if (to === US) return `US ${value}`
-            return `$ ${value * changeCOUS}`
-        default:
-            return 0
+    if (value) {
+        switch (from) {
+            case CO:
+                if (to === CO) return `$ ${value}`
+                return `US ${value * changeUSCO}`
+            case US:
+                if (to === US) return `US ${value}`
+                return `$ ${value * changeCOUS}`
+            default:
+                return 0
+        }
     }
+    return null
 
 }
 
